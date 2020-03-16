@@ -1,0 +1,66 @@
+<!--<div style="height: 50px;padding: 8px;color: white;background-color: #1976d2;">
+  <h4>Welcome to banks</h4>
+</div>-->
+  <div style="height:3px;">
+    <span *ngIf="loaderbar">
+      <mat-progress-bar [color]="'warn'" mode="indeterminate"></mat-progress-bar>
+    </span>
+  </div>
+  <mat-card>
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-grow-1 bd-highlight"><h3>Banks Detail</h3></div>
+      <div class="p-2 bd-highlight">
+        <mat-form-field appearance="outline">
+          <mat-label>Select City</mat-label>
+          <mat-select (selectionChange)="selectcity($event.value)">
+            <mat-option value="MUMBAI">MUMBAI</mat-option>
+            <mat-option value="DELHI">DELHI</mat-option>
+            <mat-option value="GURGAON">GURGAON</mat-option>
+            <mat-option value="PUNE">PUNE</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </div>
+
+  </mat-card>
+
+
+  <div>
+    <table class="table table-striped" style="background-color: white;">
+      <thead>
+        <tr>
+          <th scope="col">ifsc</th>
+          <th scope="col">bank_id</th>
+          <th scope="col">branch</th>
+          <th scope="col">address</th>
+          <th scope="col">city</th>
+          <th scope="col">district</th>
+          <th scope="col">state</th>
+          <th scope="col">bank_name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bankData | slice:startRow:endRow">
+          <td>{{item.ifsc}}</td>
+          <td>{{item.bank_id}}</td>
+          <td>{{item.branch}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.city}}</td>
+          <td>{{item.district}}</td>
+          <td>{{item.state}}</td>
+          <td>{{item.bank_name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<div>
+  <div class="row" style="background-color: aliceblue;text-align:center;">
+    <div class="col-md-12">
+      <ul style="display:inline-flex;list-style:none;">
+        <li *ngFor="let item of pageArray" (click)="onPageChange(item)" style="padding:5px;" [ngClass]="{'active-page':item==currentPage}"
+            [hidden]="item > currentPage+5 || item < currentPage-5">{{item+1}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

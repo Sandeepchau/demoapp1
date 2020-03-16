@@ -1,0 +1,95 @@
+<mat-card><h3>User Entry</h3></mat-card>
+<div style="background-color:white;padding: 60px;">
+  <div class="container">
+    <form class="m-form" [formGroup]="userForm">
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="First Name" formControlName="FirstName" />
+            <mat-error>
+              First Name is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="Last Name" formControlName="LastName" />
+            <mat-error>
+              Last Name is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="Gender" formControlName="Gender" />
+            <mat-error>
+              Gender is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="Phone Number" formControlName="PhoneNumber" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="Email" formControlName="Email"/>
+            <mat-error>
+              Valid email is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="Account No" formControlName="AccountNo" />
+            <mat-error>
+              Only number and is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="IFSC Code" formControlName="IFSCCode" />
+            <mat-error>
+              Only alphanumeric and is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" style="width:100%">
+            <input matInput placeholder="Notes" formControlName="Notes" />
+          </mat-form-field>
+        </div>
+      </div>
+
+    </form>
+
+
+      <div class="row text-right">
+        <div class="col-12" style="margin-top: -15px;">
+          <button type="button" (click)="submitUser()">
+            Submit
+          </button>
+        </div>
+
+      </div>
+
+  </div>
+</div>
+<mat-card style="margin-top:2px;color:forestgreen;"><h3>{{successMessage}}</h3></mat-card>
